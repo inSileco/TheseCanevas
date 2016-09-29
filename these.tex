@@ -1,0 +1,223 @@
+% ----------------------------------------------------------------------%
+% Coquille pour thèses et mémoires.                                     %
+% UQAR, 29 mai 2009.                                                    %
+% Modifié par F. Cyr - aout 2013                                        %
+%		 AC. Tassel - janvier 2014                                          %
+%		 C. Rigaud - 2014-2015                                              %
+% ----------------------------------------------------------------------%
+
+
+
+% ----------------------------------------------------------------------%
+% 1- Préambule.                                                        %
+% ----------------------------------------------------------------------%
+
+% Pour le dépôt initial (recto),       utiliser  oneside.
+% Pour le dépôt final  (recto-verso), remplacer oneside par twoside.
+
+\documentclass[12pt,oneside,francais,letterpaper]{stylethese}
+% \documentclass[12pt,twoside,letterpaper]{stylethese}
+
+\raggedbottom % Évite les espaces trop gands entre chaque section.
+
+% \usepackage{multirow}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{enumerate} % For fancy enumerate item labels.
+% \usepackage{utopia}
+\usepackage{txfonts,empheq}
+%\usepackage{chancery}
+%\usepackage{ccaption}		 %pour utiliser \legend (pour l'explication de la figure,texte plus long)
+%\usepackage{pgfplots}      	 % dessiner des graphes direct dans LaTeX
+%\pgfplotsset{compat=1.3}
+\usepackage{multicol}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+
+
+\usepackage{chapterbib} % <----- for bibliography per chapter
+%\usepackage[duplicate]{chapterbib}
+%\usepackage{url}
+
+% Ajout Cyril :
+\usepackage[linktocpage=true,linkcolor=cyan,citecolor=cyan,colorlinks=true,urlcolor=blue,pagebackref]{hyperref}
+\usepackage[english,french]{cleveref}
+\usepackage{upgreek}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ltxtable}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{afterpage}
+\usepackage{floatpag}
+\usepackage[babel=true]{csquotes}
+\usepackage{pifont}
+\usepackage{soulutf8}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{ulem}
+%%------------------ Ce qu'on a besoin pour inclure du code
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\small}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{232,232,232}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.46,0.37,0.17}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.46,0.37,0.17}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.46,0.37,0.17}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.72,0.15,0.13}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.15,0.60,0.25}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+\captionsetup{singlelinecheck=false}
+% \captionsetup{singlelinecheck=false}
+
+% KC: j'ai rajouté ça mais si tout est à jour ça doit être OK
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+\setlength{\LTcapwidth}{1.55\linewidth}
+
+%Marge inférieure avec note de bas de page
+\setlength{\footnotesep}{1cm}
+
+%Régler le problème des Et/And entre deux auteurs (voir le fichier "tutoriel bst")
+\newcommand*{\andname}{and}
+      \addto \captionsenglish {\renewcommand*{\andname}{and}}
+      \addto \captionsfrench  {\renewcommand*{\andname}{et}}
+
+%Intitulé des figures en français
+\addto\captionsfrench{\renewcommand{\figurename}{Figure}}
+
+%Intitulé des tableaux en français
+\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+
+% Interligne 1 et 1/2.
+\setstretch{1.5}
+
+% Pour créer un index (optionnel).
+\makeindex
+
+% Info sur la thèse (Titre, auteur, etc.)
+\Titre{LE TITRE DE LA THÈSE}
+% Mettre en majuscule!!
+\Auteur{David Beauchesnes}
+\Faculte{programme de doctorat en Biologie}
+\Diplome{Philosophiae Doctor}
+\Date{Septembre}{2017}
+
+\These
+
+\Articles
+
+
+
+
+\begin{document}
+\pdfstringdefDisableCommands{%
+\let\MakeUppercase\relax}
+
+
+
+% ----------------------------------------------------------------------%
+% 2- Liminaires de la thèse.                                            %
+% ----------------------------------------------------------------------%
+
+\include{liminaires}
+
+
+
+
+
+
+% ----------------------------------------------------------------------%
+% 3- Corps de la thèse.                                                %
+% ----------------------------------------------------------------------%
+
+\debutcorps
+\cleardoublepage
+% Utiliser      chapitres.tex pour une thèse (ou mémoire) traditionnelle.
+% Remplacer par articles.tex  pour une thèse (ou mémoire) par articles.
+
+
+\introduction
+\selectlanguage{french}
+
+% \chapter{INTRODUCTION GÉNÉRALE}
+\input{intro.tex}
+\cleardoublepage
+
+
+\selectlanguage{english}
+
+\input{./chapitre1/chap1.tex}
+\input{./chapitre2/chap2.tex}
+\input{./chapitre3/chap3.tex}
+
+\cleardoublepage
+
+
+\conclusion
+\selectlanguage{french}
+\input{conclu.tex}
+\cleardoublepage
+
+
+
+
+% ----------------------------------------------------------------------%
+% 4 - Appendices de la thèse.                                           %
+% ----------------------------------------------------------------------%
+
+
+\input{annexe1/annexe1.tex}
+\input{annexe2/annexe2.tex}
+
+
+
+
+
+
+% ----------------------------------------------------------------------%
+% 5 - Bibliographie.                                                    %
+% ----------------------------------------------------------------------%
+
+\begin{singlespace}
+  \makeatletter
+  \phantomsection\addcontentsline{toc}{chapter}{\MakeUppercase{\@references}}
+  \makeatother
+  \selectlanguage{english}
+  \bibliographystyle{apalike}
+  \bibliography{mybiblio} % Ici mettre le nom de la biblio, ici mylib.bib
+\end{singlespace}
+
+% \begin{singlespace}
+%   \makeatletter
+%   \phantomsection\addcontentsline{toc}{chapter}{\MakeUppercase{\@references}}
+%   \makeatother
+%   \selectlanguage{english}
+%   % \bibliographystyle{elsevier-harvard.csl} % Ici éditer le style
+%   \bibliography{/Users/KevCaz/Documents/library.bib} % Ici mettre le nom de la biblio, ici mylib.bib
+% \end{singlespace}
+
+
+
+% ----------------------------------------------------------------------%
+% Fin du document.                                                     %
+% ----------------------------------------------------------------------%
+
+\end{document}
