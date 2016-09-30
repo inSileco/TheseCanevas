@@ -4,20 +4,21 @@ Note: Le \{-\} dans le fichier .md signal que la section ne sera pas numérotée
 
 ## Titre de niveau 2 {-}
 
+### Titre de niveau 3 {-}
+
+
 # Quelques rappels sur Makdown et Pandoc
 
 Pour la synthaxe, ci-dessous est présenté "l'essentiel"
-pour la rédaction d'un document tel qu'une thèse. Pour avoir des
-informations plus exhaustives et pour bien comprendre ce qu'est Markdown, voir
-la [dernière spécifcation de Common Mark](http://spec.commonmark.org/0.25/).
+pour la rédaction d'un document tel une thèse. Pour avoir des
+informations plus exhaustives et pour bien comprendre ce qu'est Markdown, voir la [dernière spécifcation de Common Mark](http://spec.commonmark.org/0.25/).
 
-Pour convertir le fichier Markdown (md) en un autre fichier j'utilise le
-converteur universel [Pandoc](http://pandoc.org).
+Pour convertir le fichier Markdown (.md) en fichier Latex (.tex), j'utilise le converteur universel de documeent [Pandoc](http://pandoc.org).
 
 
 # Synthaxe Pandoc Markdown {-}
 
-## Simple mises en forme {-}
+## Simple mise en forme {-}
 
 Écrire en **gras** utiliser un "\\emph": *emph* (en français c'est souligner
 en anglais c'est en italic). Utiliser un ^exposant^.
@@ -32,22 +33,27 @@ une liste numérotée\ :
 1. cool
 2. cool2
 
-## Note de bas de page et hyperlien
 
+## Note de bas de page
 
-Une note de bas de page[^cool].
-Une lien internet \[nom du lien\]\(adresse su lien\), ex: [Pandoc](http://pandoc.org).
+Une note de bas de page[^cool]. Noter on peut les regrouper n'importe où  dans le document.
 
 [^cool]: Ici, mettre le texte de la note de bas de page.
+
+
+## Liens hypertextes
+
+Une lien internet \[nom du lien\]\(adresse su lien\), ex: [Pandoc](http://pandoc.org).
+
 
 
 ## Citations {-}
 
 Pour les citation courtes en anglais les guillemets anglais "That's one small
 step for man, one giant leap for mankind". Pour les français, le mieux utilser
-les code HTML: &laquo; Vive le Québec libre !  &raquo;
+les codes HTML: &laquo; Vive le Québec libre!  &raquo;
 
-Pour faire une citation plus longuqe, il suffit d'utiliser '\>' citation de plus de 2 lignes:
+Pour faire une citation plus longue, il suffit d'utiliser '\>' citation de plus de 2 lignes:
 
 > Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -73,7 +79,7 @@ pandoc (écrit en python) [Pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos
 
 $$\prod_{i=1}^nu_n=1$$ {#eq:intr_1}
 
-Voila une ref à l'équation @eq:intr_1
+Voila, une référence à l'équation @eq:intr_1
 
 
 
@@ -83,15 +89,15 @@ Voila une ref à l'équation @eq:intr_1
 
 Pour insérer une \!\[la légende\]\(chemin vers la figure\)
 
-![Une tite figfure](fig/fig1.pdf){width=80% #fig:intr1}
+![Une petite figure](fig/fig1.pdf){width=80% #fig:intr1}
 
-Pour faire une ref à la figure @fig:intr1.
+Pour faire une référence à la figure @fig:intr1. Pour ce faire j'utilise
+[Pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
 
 
 ## Tables {-}
 
-Pour les utilisateur de R, une astuce: faîtes vos tables avec R et utiliser la
-fonction 'kable' de du package [knitr](http://yihui.name/knitr/) !!
+Pour les utilisateurs de R, une astuce: faîtes vos tables avec R et utiliser la fonction `kable` du package [knitr](http://yihui.name/knitr/)!
 
 |   |Plant |Type        |Treatment  | conc| uptake|
 |:--|:-----|:-----------|:----------|----:|------:|
@@ -107,7 +113,7 @@ fonction 'kable' de du package [knitr](http://yihui.name/knitr/) !!
 |80 |Mc3   |Mississippi |chilled    |  250|   17.9|
 Table: Une petite légende. {#tbl:intr_1}
 
-Pour faire des référence j'utilise [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
+Pour faire des références aux tables j'utilise [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
 Et hop je vaos référence à la figured @tbl:intr_1.
 
 

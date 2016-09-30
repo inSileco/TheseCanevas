@@ -7,23 +7,27 @@ numérotée.
 \subsection*{Titre de niveau 2}\label{titre-de-niveau-2}
 \addcontentsline{toc}{subsection}{Titre de niveau 2}
 
+\subsubsection*{Titre de niveau 3}\label{titre-de-niveau-3}
+\addcontentsline{toc}{subsubsection}{Titre de niveau 3}
+
 \section{Quelques rappels sur Makdown et
 Pandoc}\label{quelques-rappels-sur-makdown-et-pandoc}
 
 Pour la synthaxe, ci-dessous est présenté ``l'essentiel'' pour la
-rédaction d'un document tel qu'une thèse. Pour avoir des informations
-plus exhaustives et pour bien comprendre ce qu'est Markdown, voir la
+rédaction d'un document tel une thèse. Pour avoir des informations plus
+exhaustives et pour bien comprendre ce qu'est Markdown, voir la
 \href{http://spec.commonmark.org/0.25/}{dernière spécifcation de Common
 Mark}.
 
-Pour convertir le fichier Markdown (md) en un autre fichier j'utilise le
-converteur universel \href{http://pandoc.org}{Pandoc}.
+Pour convertir le fichier Markdown (.md) en fichier Latex (.tex),
+j'utilise le converteur universel de documeent
+\href{http://pandoc.org}{Pandoc}.
 
 \section*{Synthaxe Pandoc Markdown}\label{synthaxe-pandoc-markdown}
 \addcontentsline{toc}{section}{Synthaxe Pandoc Markdown}
 
-\subsection*{Simple mises en forme}\label{simple-mises-en-forme}
-\addcontentsline{toc}{subsection}{Simple mises en forme}
+\subsection*{Simple mise en forme}\label{simple-mise-en-forme}
+\addcontentsline{toc}{subsection}{Simple mise en forme}
 
 Écrire en \textbf{gras} utiliser un ``\textbackslash{}emph'':
 \emph{emph} (en français c'est souligner en anglais c'est en italic).
@@ -50,11 +54,14 @@ une liste numérotée~:
   cool2
 \end{enumerate}
 
-\subsection{Note de bas de page et
-hyperlien}\label{note-de-bas-de-page-et-hyperlien}
+\subsection{Note de bas de page}\label{note-de-bas-de-page}
 
 Une note de bas de page\footnote{Ici, mettre le texte de la note de bas
-  de page.}. Une lien internet {[}nom du lien{]}(adresse su lien), ex:
+  de page.}. Noter on peut les regrouper n'importe où dans le document.
+
+\subsection{Liens hypertextes}\label{liens-hypertextes}
+
+Une lien internet {[}nom du lien{]}(adresse su lien), ex:
 \href{http://pandoc.org}{Pandoc}.
 
 \subsection*{Citations}\label{citations}
@@ -62,9 +69,9 @@ Une note de bas de page\footnote{Ici, mettre le texte de la note de bas
 
 Pour les citation courtes en anglais les guillemets anglais ``That's one
 small step for man, one giant leap for mankind''. Pour les français, le
-mieux utilser les code HTML: « Vive le Québec libre ! »
+mieux utilser les codes HTML: « Vive le Québec libre! »
 
-Pour faire une citation plus longuqe, il suffit d'utiliser
+Pour faire une citation plus longue, il suffit d'utiliser
 `\textgreater{}' citation de plus de 2 lignes:
 
 \begin{quote}
@@ -99,7 +106,7 @@ filtre pandoc (écrit en python)
 
 \begin{equation}\prod_{i=1}^nu_n=1\label{eq:intr_1}\end{equation}
 
-Voila une ref à l'équation \ref{eq:intr_1}
+Voila, une référence à l'équation \ref{eq:intr_1}
 
 \subsection*{Figures}\label{figures}
 \addcontentsline{toc}{subsection}{Figures}
@@ -109,17 +116,18 @@ Pour insérer une !{[}la légende{]}(chemin vers la figure)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.80000\textwidth]{fig/fig1.pdf}
-\caption{Une tite figfure\label{fig:intr1}}
+\caption{Une petite figure\label{fig:intr1}}
 \end{figure}
 
-Pour faire une ref à la figure \ref{fig:intr1}.
+Pour faire une référence à la figure \ref{fig:intr1}. Pour ce faire
+j'utilise \href{https://github.com/tomduck/pandoc-fignos}{Pandoc-fignos}
 
 \subsection*{Tables}\label{tables}
 \addcontentsline{toc}{subsection}{Tables}
 
-Pour les utilisateur de R, une astuce: faîtes vos tables avec R et
-utiliser la fonction `kable' de du package
-\href{http://yihui.name/knitr/}{knitr} !!
+Pour les utilisateurs de R, une astuce: faîtes vos tables avec R et
+utiliser la fonction \texttt{kable} du package
+\href{http://yihui.name/knitr/}{knitr}!
 
 \begin{longtable}[]{@{}llllrr@{}}
 \caption{Une petite légende. \label{tbl:intr_1}}\tabularnewline
@@ -144,7 +152,7 @@ utiliser la fonction `kable' de du package
 \bottomrule
 \end{longtable}
 
-Pour faire des référence j'utilise
+Pour faire des références aux tables j'utilise
 \href{https://github.com/tomduck/pandoc-tablenos}{pandoc-tablenos} Et
 hop je vaos référence à la figured \ref{tbl:intr_1}.
 
