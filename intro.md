@@ -74,15 +74,30 @@ Exemple: $\overline{x}$, $\mathcal{N}$
 
 ### Équations {-}
 
-Utiliser \$\$votre equation\$\$ Pour faire des références, j'utilise un filtre
-pandoc (écrit en python) [Pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos)
+Utiliser \$\$votre equation\$\$ pour insérer une équations.
+Pour faire des références aux équations insérées, j'utilise un filtre
+pandoc [Pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos) (écrit en python).
+Par exemple\ :
 
 $$\prod_{i=1}^nu_n=1$$ {#eq:intr_1}
 
-Voila, une référence à l'équation @eq:intr_1
+Voila, une référence à l'équation @eq:intr_1. Vous pouvez mettre des équations
+les unes à la suite des autres, elles seront alors considérées comme deux
+équations indpendantes.
 
+$$\sum_{i=1}^nu_n=1$$ {#eq:intr_2}
+$$\int_{i=1}^nu_n=1$$ {#eq:intr_3}
 
+Sinon on peut utiliser des combinaisons de commandes \LaTeX un peu plus élaborées\ :
 
+$$
+\left \{
+\begin{array}{c @{=} c}
+    x & \sin a \cos b \\
+    y & \sin a \sin b \\
+\end{array}
+\right.
+$$ {#eq:intr_4}
 
 
 ## Figures {-}

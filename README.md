@@ -9,11 +9,17 @@ tout en profitant du confort de Markdown.
 
 - [GNU make](https://www.gnu.org/software/make/manual/make.html)
 
+
 - [Pandoc](http://pandoc.org) pour convertir les fichier `.md` en fichier `.tex` (Pandoc est bien plus que cela!)
 - les filtres Pandoc suivants\ :
   - [Pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos) pour les équations,
   - [Pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos) pour les tables,
-  - [Pandoc-fignos](https://github.com/tomduck/pandoc-fignos) pour les figures.
+  - [Pandoc-fignos](https://github.com/tomduck/pandoc-fignos) pour les figures,
+  - pour les installer:
+
+  ```bash
+  pip install pandoc-fignos pandoc-tablenos pandoc-eqnos
+  ```  
 
 
 - Pour la synthaxe Pamdoc Markdown, plusieurs liens:
