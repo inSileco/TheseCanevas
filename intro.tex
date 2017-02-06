@@ -131,7 +131,7 @@ Sinon on peut utiliser des combinaisons de commandes \LaTeX un peu plus
 
 Pour insérer une !{[}la légende{]}(chemin vers la figure)
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics[width=0.80000\textwidth]{fig/fig1.pdf}
 \caption{Une petite figure\label{fig:intr1}}
@@ -150,11 +150,35 @@ utiliser la fonction \texttt{kable} du package
 \begin{longtable}[]{@{}llllrr@{}}
 \caption{Une petite légende. \label{tbl:intr_1}}\tabularnewline
 \toprule
-& Plant & Type & Treatment & conc & uptake\tabularnewline
+\begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+Plant\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+Type\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+Treatment\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
+conc\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
+uptake\strut
+\end{minipage}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-& Plant & Type & Treatment & conc & uptake\tabularnewline
+\begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+Plant\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+Type\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+Treatment\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
+conc\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
+uptake\strut
+\end{minipage}\tabularnewline
 \midrule
 \endhead
 8 & Qn2 & Quebec & nonchilled & 95 & 13.6\tabularnewline
@@ -203,7 +227,7 @@ la forme d'un bloc~:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{for} \KeywordTok{i} \NormalTok{in }\KeywordTok{`seq} \NormalTok{1 6}\KeywordTok{`;} \KeywordTok{do} \KeywordTok{qsub} \NormalTok{start}\OtherTok{$i}\NormalTok{.sh }\KeywordTok{;} \KeywordTok{done}
+\KeywordTok{for} \ExtensionTok{i} \NormalTok{in }\KeywordTok{`}\FunctionTok{seq} \NormalTok{1 6}\KeywordTok{`;} \KeywordTok{do} \ExtensionTok{qsub} \NormalTok{start}\VariableTok{$i}\NormalTok{.sh }\KeywordTok{;} \KeywordTok{done}
 \end{Highlighting}
 \end{Shaded}
 

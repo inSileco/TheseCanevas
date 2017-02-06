@@ -22,6 +22,7 @@ PFLAGS = --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-eqnos -
 
 
 
+
 ALL: $(THES)
 
 # La site apèrs les: déterminent les fichier qui lorsqu'ils sont modifiés vont
@@ -50,3 +51,7 @@ $(CHP1): $(CH1M)
 	pandoc $< -o chapitre1/main.tex $(PFLAGS)
 	cat chapitre1/head.tex chapitre1/main.tex > $@
 	sed -i -e 's/includegraphics{/includegraphics[width=\\textwidth]{/g' chapitre1/chap1.tex
+
+
+clean:
+	rm *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log
