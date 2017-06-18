@@ -34,10 +34,9 @@ $(THES): $(THTX) $(LIMI) $(INTH) $(ITTX) $(CCTX) $(REF) $(INLI) $(CHP1)
 	pdflatex these
 	pdflatex these
 
-
 $(LIMI): $(OULI)
 
-# J'utilise une pattern rule http://stackoverflow.com/questions/1633527/wildcard-targets-in-a-makefile
+# J'utilise une 'pattern rule' => http://stackoverflow.com/questions/1633527/wildcard-targets-in-a-makefile
 $(LIPA)/%.tex: $(LIPA)/%.md
 	pandoc $< -o $@
 
@@ -50,8 +49,6 @@ $(CCTX): $(CCMD)
 $(CHP1): $(CH1M)
 	pandoc $< -o chapitre1/main.tex $(PFLAGS)
 	cat chapitre1/head.tex chapitre1/main.tex > $@
-	sed -i -e 's/includegraphics{/includegraphics[width=\\textwidth]{/g' chapitre1/chap1.tex
-
 
 clean:
-	rm *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log
+	rm intro.tex conclu.tex *pdf *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log

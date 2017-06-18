@@ -146,9 +146,12 @@ les appeller en utiisant les \\ref{chap1}. Au chapitre \ref{chap1}, je fais un
 truc super.
 
 
+
+
 ## Inclure du code {-}
 
 Dans une ligne `x <- 3` et pour inclure du code sous la forme d'un bloc\ :
+
 
 ```R
 for (i in 1:10){

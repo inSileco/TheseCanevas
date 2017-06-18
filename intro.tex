@@ -150,35 +150,11 @@ utiliser la fonction \texttt{kable} du package
 \begin{longtable}[]{@{}llllrr@{}}
 \caption{Une petite légende. \label{tbl:intr_1}}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-Plant\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-Type\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-Treatment\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
-conc\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
-uptake\strut
-\end{minipage}\tabularnewline
+& Plant & Type & Treatment & conc & uptake\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-Plant\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-Type\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-Treatment\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
-conc\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedleft\strut
-uptake\strut
-\end{minipage}\tabularnewline
+& Plant & Type & Treatment & conc & uptake\tabularnewline
 \midrule
 \endhead
 8 & Qn2 & Quebec & nonchilled & 95 & 13.6\tabularnewline
@@ -219,7 +195,7 @@ la forme d'un bloc~:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{for (i in }\DecValTok{1}\NormalTok{:}\DecValTok{10}\NormalTok{)\{}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)\{}
   \KeywordTok{print}\NormalTok{(i)}
 \NormalTok{\}}
 \end{Highlighting}
@@ -227,7 +203,7 @@ la forme d'un bloc~:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{for} \ExtensionTok{i} \NormalTok{in }\KeywordTok{`}\FunctionTok{seq} \NormalTok{1 6}\KeywordTok{`;} \KeywordTok{do} \ExtensionTok{qsub} \NormalTok{start}\VariableTok{$i}\NormalTok{.sh }\KeywordTok{;} \KeywordTok{done}
+\KeywordTok{for} \ExtensionTok{i}\NormalTok{ in }\KeywordTok{`}\FunctionTok{seq}\NormalTok{ 1 6}\KeywordTok{`;} \KeywordTok{do} \ExtensionTok{qsub}\NormalTok{ start}\VariableTok{$i}\NormalTok{.sh }\KeywordTok{;} \KeywordTok{done}
 \end{Highlighting}
 \end{Shaded}
 

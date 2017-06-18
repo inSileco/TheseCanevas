@@ -181,3 +181,7 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+
+## KC pdf I don't want to be add on the repo
+these.pdf
