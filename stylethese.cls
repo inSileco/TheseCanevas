@@ -16,7 +16,7 @@
   \ProvidesClass{stylethese}[2009/05/10 Style pour theses UQAR]
   %\RequirePackage{doublespace,cite,indentfirst,epsfig,ifthen}
   %\RequirePackage{doublespace,indentfirst,epsfig,ifthen,remreset,graphicx,dcolumn,amsmath,makeidx,multicol,natbib}
-  \RequirePackage{setspace,remreset,graphicx,makeidx,ifthen}
+  \RequirePackage{setspace,remreset,graphicx,makeidx,ifthen, tikz}
   \RequirePackage[english,frenchb]{babel} % frenchb default
 % \RequirePackage[frenchb,english]{babel} % english default
   \LoadClassWithOptions{book}
@@ -154,16 +154,24 @@
 % \renewcommand\figurename{Figure}
 % \renewcommand\tablename{Tableau}
 
-% Page Titre.
 
+% Page Titre. Modified
+
+  \newcommand\Grade[1]{\newcommand\@Grade{#1}}
+  \newcommand\Etablissement[1]{\newcommand\@Etablissement{#1}}
+  \newcommand\EcoleDoctorale[1]{\newcommand\@EcoleDoctorale{#1}}
+  \newcommand\UniteRecherche[1]{\newcommand\@UniteRecherche{#1}}
+  \newcommand\Specialite[1]{\newcommand\@Specialite{#1}}
   \newcommand\Auteur[1]{\newcommand\@Auteur{#1}}
   \newcommand\Titre[1]{\newcommand\@Titre{#1}}
-  \newcommand\Faculte[1]{\newcommand\@Faculte{#1}}
-  \newcommand\Diplome[1]{\newcommand\@Diplome{#1}}
   \newcommand\Date[2]{\newcommand\@Datea{#1}\newcommand\@Dateb{#2}}
 %  \newcommand\These{\newcommand\@Travail{TH\`ESE}\newcommand\@Presente{PR\'{E}SENT\'{E}E}}
   \newcommand\These{\newcommand\@Travail{Th\`ese}\newcommand\@Presente{pr\'esent\'ee}}
   \newcommand\Memoire{\newcommand\@Travail{M\'EMOIRE}\newcommand\@Presente{PR\'{E}SENT\'{E}}}
+
+  \definecolor{titlepagecolor}{cmyk}{0,0,0,80}
+  \definecolor{titlepagecolor2}{RGB}{196,175,153}
+
 
   \def\margepagetitre#1{\list{}{\leftmargin#1}\item[]}
   %\def\margepagetitre#1#2{\list{}{\leftmargin#2\topmargin#1}\item[]}
@@ -171,24 +179,42 @@
 
   \newcommand\Pagetitre{
     \thispagestyle{empty}
-    \begin{margepagetitre}{0in}
-      % \begin{margepagetitre}{5cm}{0cm}
+    %\begin{margepagetitre}{0in}
+    \begin{margepagetitre}{5cm}{0cm}
 
       \null\vskip+1.0cm % PSL
+
+      %En-tête
+  \begin{tikzpicture}[remember picture,overlay]
+      \node [rectangle, bottom color=titlepagecolor, top color=titlepagecolor!30!white,
+      anchor=north west, minimum width=4cm, minimum height=\paperheight] (box) at
+      (current page.north west){};
+
+  \node[anchor=north west] (logo1) at (box center)
+      {\includegraphics[height=2cm]{example-image-a}}
+
+      \end{tikzpicture}
+
+
+      \vfill{\@Travail} \\
+      {pour obtenir le grade de} \\
+      {\@Grade} \\
       \begin{center}
         % \hskip-1.6cm	\MakeUppercase{Universit\'{e} du Qu\'{e}bec \`{a} Rimouski}
         % \textbf{\MakeUppercase{Universit\'{e} du Qu\'{e}bec \`{a} Rimouski}}\\
 
-        \includegraphics[width=8cm]{img/rimouski-noir.eps}
+        %\includegraphics[width=8cm]{img/rimouski-noir.eps}
 
 
-        \vfill\textbf{\@Titre}\\
-  	\vfill{\@Travail}
-  	{\@Presente} \\
-  	\vskip0.1cm{dans le cadre du \@Faculte} \\
-  	\vskip0.1cm{en vue de l'obtention du grade de \@Diplome}
-  	\vfill{PAR} \\
-  	\vskip0.1cm\textbf{\MakeUppercase{\textcopyright \@Auteur}}
+  	\vskip0.1cm{D\'elivr\'ee par \MakeUppercase{\@Etablissement}} \\
+	\vskip0.1cm{Pr\'epar\'ee au sein de l'\'ecole doctorale \MakeUppercase{\@EcoleDoctorale}} \\
+	\vskip0.1cm{Et de l'unit\'e de recherche 
+	\@UniteRecherche}
+  	\vskip0.1cm{Specialit\'e: \@Specialite} \\
+  	\vskip2cm{Pr\'esent\'ee par \@Auteur} \\
+
+  	\vskip0.1cm\textbf{\MakeUppercase{\@Titre}}
+
   	\vskip1.5cm\textbf{{\@Datea} {\@Dateb}}
         \vskip1.5cm
 
