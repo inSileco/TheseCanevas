@@ -6,14 +6,31 @@ de montrer comment, avec un template [Latex](http://www.latex-project.org) bien 
 J'ai créé ce répertoire après avoir formaté ma thèse dont
 la version, un peu différente, est disponible sur [ce répertoire](https://github.com/KevCaz/thesis).
 
-**Attention** : le template doit être compilé avec *pdflatex*.
 
-Also, for now, I've written all in French but I'd ne happy to answer questions in English.
+For now, I've written all in French but I'd ne happy to answer questions in English. T
 
 [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
 
 # Ce qui doit être installé :wrench:
+
+- Il fait une distribution [Latex](https://www.latex-project.org/get/), le template doit être compilé avec *pdflatex*. Voici ce que la version que j'ai utilisée lors pour la dernière compilation réussie (réalisé sous MacOS Sierra (10.12.5)):
+
+```
+pdflatex --version                        
+  pdfTeX 3.14159265-2.6-1.40.17 (TeX Live 2016)
+  kpathsea version 6.2.2
+  Copyright 2016 Han The Thanh (pdfTeX) et al.
+  There is NO warranty.  Redistribution of this software is
+  covered by the terms of both the pdfTeX copyright and
+  the Lesser GNU General Public License.
+  For more information about these matters, see the file
+  named COPYING and the pdfTeX source.
+  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+  Compiled with libpng 1.6.21; using libpng 1.6.21
+  Compiled with zlib 1.2.8; using zlib 1.2.8
+  Compiled with xpdf version 3.04
+``
 
 - [GNU make](https://www.gnu.org/software/make/manual/make.html)
 

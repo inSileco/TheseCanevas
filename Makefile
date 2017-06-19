@@ -21,12 +21,15 @@ REF = mybiblio.bib
 PFLAGS = --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-eqnos --natbib --bibliography=$(REF) --latex-engine=pdflatex
 
 
+# $(THES) est la cible qui doit être produite par le fichier.
+# Le bébnéfice d'un makefile est de regénéré les fichiers adéquates lorsque les
+# sources ont été modifiés. Avec pdflatex plusieurs compilation sont nécesaires
+# pour que les références (biblio / equation / figures...) soient correctement
+# insérées (ici, j'utilise la force un peu brute ici, je pourrais vérifier un peu
+# plus en détails quels fichiers sont changées et combien de fois je dois recompiler).
 
 
 ALL: $(THES)
-
-# La site apèrs les: déterminent les fichier qui lorsqu'ils sont modifiés vont
-# être recompilés; il faut complier 3 fois pour avoir tout!!
 
 $(THES): $(THTX) $(LIMI) $(INTH) $(ITTX) $(CCTX) $(REF) $(INLI) $(CHP1)
 	pdflatex these
@@ -51,4 +54,4 @@ $(CHP1): $(CH1M)
 	cat chapitre1/head.tex chapitre1/main.tex > $@
 
 clean:
-	rm intro.tex conclu.tex *pdf *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log
+	rm intro.tex conclu.tex chapitre1/chap1.tex these.pdf *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log

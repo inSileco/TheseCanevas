@@ -185,3 +185,8 @@ TSWLatexianTemp*
 
 ## KC pdf I don't want to be add on the repo
 these.pdf
+
+## KC intermediate files
+intro.tex
+conclu.tex
+chapitre1/chap1.tex
