@@ -30,7 +30,7 @@ pdflatex --version
   Compiled with libpng 1.6.21; using libpng 1.6.21
   Compiled with zlib 1.2.8; using zlib 1.2.8
   Compiled with xpdf version 3.04
-``
+```
 
 - [GNU make](https://www.gnu.org/software/make/manual/make.html)
 
