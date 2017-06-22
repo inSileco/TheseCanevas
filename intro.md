@@ -126,10 +126,11 @@ Pour les utilisateurs de R, une astuce: faîtes vos tables avec R et utiliser la
 |64 |Mc1   |Mississippi |chilled    |   95|   10.5|
 |72 |Mc2   |Mississippi |chilled    |  175|   11.4|
 |80 |Mc3   |Mississippi |chilled    |  250|   17.9|
+
 Table: Une petite légende. {#tbl:id1}
 
 Pour faire référence à une table, j'utilise [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
-Et maintenant, je peux faire référence à la table {@tbl:id1}.
+Et maintenant, je peux faire référence à la table @tbl:id1.
 
 
 
