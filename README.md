@@ -14,7 +14,7 @@ For now, I've written all in French but I'd ne happy to answer questions in Engl
 
 # Ce qui doit être installé :wrench:
 
-- Il fait une distribution [Latex](https://www.latex-project.org/get/), le template doit être compilé avec *pdflatex*. Voici ce que la version que j'ai utilisée lors pour la dernière compilation réussie (réalisé sous MacOS Sierra (10.12.5)):
+- Il fait une distribution [Latex](https://www.latex-project.org/get/), le template doit être compilé avec *pdflatex*. Voici ce que la version que j'ai utilisée lors pour la dernière compilation réussie (réalisé sous MacOS Sierra (10.12.5) et Raspbian Jessie):
 
 ```
 pdflatex --version                        
@@ -66,3 +66,44 @@ Pour faire un *clean build* commencez avec:
 ```bash
 make clean
 ```
+
+# Raspbian build
+
+Voici ce que j'ai utilisé pour que tout marche sur Raspbian-Jessie
+
+Mon fichier `/etc/apt/sources.list` est:
+
+```bash
+deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi
+deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
+deb http://archive.raspbian.org/raspbian/ stretch main
+```
+
+Mettre tout à jour:
+
+```bash
+apt-get update && apt-get upgrade
+```
+
+Installer Latex:
+
+```bash
+apt-get install textlive-base texlive-science texlive-extra-utils texlive-font-utils texlive-fonts-extra texlive-fonts-recommended
+sudo apt-get install texlive-latex-base texlive-latex-extra texlive-lang-english texlive-lang-french
+```
+
+Installer Pandoc:
+
+```bash
+sudo apt-get install pandoc pandoc-citeproc
+```
+
+Python est déjà installé, et a été mis-à jour plus haut, il faut cependant s'assurer que le `pip` soit à jour puis installer les filtres:
+
+```bash
+sudo apt-get install python-pip
+sudo easy_install -U setuptools
+sudo pip install pandoc-fignos pandoc-tablenos pandoc-eqnos
+```
+
+Voila, le `make` devrait marcher.
