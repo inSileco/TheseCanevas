@@ -104,7 +104,7 @@ $$ {#eq:intr_4}
 
 Pour insérer une \!\[la légende\]\(chemin vers la figure\)
 
-![Une petite figure](fig/fig1.pdf){width=80% #fig:intr1}
+![Une petite figure](fig/fig1.pdf){ #fig:intr1 width=80% }
 
 Pour faire une référence à la figure @fig:intr1. Pour ce faire j'utilise
 [Pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
@@ -126,10 +126,10 @@ Pour les utilisateurs de R, une astuce: faîtes vos tables avec R et utiliser la
 |64 |Mc1   |Mississippi |chilled    |   95|   10.5|
 |72 |Mc2   |Mississippi |chilled    |  175|   11.4|
 |80 |Mc3   |Mississippi |chilled    |  250|   17.9|
-Table: Une petite légende. {#tbl:intr_1}
+Table: Une petite légende. {#tbl:id1}
 
-Pour faire des références aux tables j'utilise [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
-Et hop je fais référence à la figure @tbl:intr_1.
+Pour faire référence à une table, j'utilise [pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos)
+Et maintenant, je peux faire référence à la table {@tbl:id1}.
 
 
 
