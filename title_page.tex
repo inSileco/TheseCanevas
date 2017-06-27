@@ -1,0 +1,66 @@
+\documentclass[12pt,oneside,francais,a4paper]{stylethese}
+% \documentclass[12pt,twoside,letterpaper]{stylethese}
+
+\raggedbottom % Évite les espaces trop gands entre chaque section.
+
+% \usepackage{multirow}
+\usepackage{natbib}
+\usepackage{amssymb,amsmath}
+\usepackage{enumerate} % For fancy enumerate item labels.
+% \usepackage{utopia}
+\usepackage{txfonts,empheq}
+%\usepackage{chancery}
+%\usepackage{ccaption}		 %pour utiliser \legend (pour l'explication de la figure,texte plus long)
+%\usepackage{pgfplots}      	 % dessiner des graphes direct dans LaTeX
+%\pgfplotsset{compat=1.3}
+\usepackage{multicol}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{tikz}
+
+
+
+\def\margepagetitre#1{\list{}{\leftmargin#1}\item[]}
+
+\begin{document}
+    \thispagestyle{empty}
+    \begin{margepagetitre}{5cm}
+    
+
+	\null\vskip+1.0cm % PSL
+
+      %En-tête
+	\begin{tikzpicture}[remember picture,overlay]
+	    %Banière
+	    \node [rectangle, 
+		    bottom color=titlepagecolor!40!white, 
+		    top color=white, 
+		    anchor=north west, 
+		    minimum width=6.0cm, 
+		minimum height=\paperheight-0.8cm] (box) at
+		([xshift=0.4cm, yshift=-0.4cm]current page.north west){};
+	%
+		\draw [dash pattern= on 0.6mm off 0.4mm] ([xshift=6.2cm, yshift=-0.4cm]current page.north
+      west) -- ([xshift=6.2cm, yshift=0.4cm]current page.south
+      west);
+
+% Logo établissement
+  \node [anchor=south west] (logo1) at ([xshift=1.2cm, yshift=1cm]current
+      page.south west){\includegraphics[width=4cm]{img/logo_um.pdf}};
+% Logo collège doctoral
+  \node [anchor=north west] (logo2) at ([xshift=1.2cm, yshift=-2cm]current page.north
+      west){\includegraphics[width=4cm]{img/logo_college_doctoral_LR.pdf}};
+% Logo grade
+  \node [anchor=north west, text width=\paperwidth, text height=4cm] (grade) at ([xshift=6.5cm, yshift=-2cm]current
+      page.north west){\includegraphics[width=12cm]{img/logo_grade_docteur.pdf}};
+
+
+      \end{tikzpicture}
+      \vskip1cm{BLABLA}
+      \vskip2cm{BLABLA}
+      
+
+
+  \end{margepagetitre}
+\end{document}
