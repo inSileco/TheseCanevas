@@ -14,7 +14,7 @@ For now, I've written all in French but I'd ne happy to answer questions in Engl
 
 # Ce qui doit être installé :wrench:
 
-- Il fait une distribution [Latex](https://www.latex-project.org/get/), le template doit être compilé avec *pdflatex*. Voici ce que la version que j'ai utilisée lors pour la dernière compilation réussie (réalisé sous MacOS Sierra (10.12.5) et Raspbian Jessie):
+- Il faut une distribution [Latex](https://www.latex-project.org/get/), le template doit être compilé avec *pdflatex*. Voici ce que la version que j'ai utilisée lors pour la dernière compilation réussie (réalisé sous MacOS Sierra (10.12.5), Raspbian Jessie et Debian Jessie):
 
 ```
 pdflatex --version                        
@@ -88,7 +88,7 @@ apt-get update && apt-get upgrade
 Installer Latex:
 
 ```bash
-apt-get install textlive-base texlive-science texlive-extra-utils texlive-font-utils texlive-fonts-extra texlive-fonts-recommended
+apt-get install texlive-base texlive-science texlive-extra-utils texlive-font-utils texlive-fonts-extra texlive-fonts-recommended
 sudo apt-get install texlive-latex-base texlive-latex-extra texlive-lang-english texlive-lang-french
 ```
 
@@ -106,4 +106,4 @@ sudo easy_install -U setuptools
 sudo pip install pandoc-fignos pandoc-tablenos pandoc-eqnos
 ```
 
-Voila, le `make` devrait marcher.
+Voilà, le `make` devrait marcher.

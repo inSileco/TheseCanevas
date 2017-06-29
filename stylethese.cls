@@ -16,7 +16,7 @@
   \ProvidesClass{stylethese}[2009/05/10 Style pour theses UQAR]
   %\RequirePackage{doublespace,cite,indentfirst,epsfig,ifthen}
   %\RequirePackage{doublespace,indentfirst,epsfig,ifthen,remreset,graphicx,dcolumn,amsmath,makeidx,multicol,natbib}
-  \RequirePackage{setspace,remreset,graphicx,makeidx,ifthen}
+  \RequirePackage{setspace,remreset,graphicx,makeidx,ifthen, tikz}
   \RequirePackage[english,frenchb]{babel} % frenchb default
 % \RequirePackage[frenchb,english]{babel} % english default
   \LoadClassWithOptions{book}
@@ -154,46 +154,109 @@
 % \renewcommand\figurename{Figure}
 % \renewcommand\tablename{Tableau}
 
-% Page Titre.
 
+% Page Titre. Modified
+
+  \newcommand\Grade[1]{\newcommand\@Grade{#1}}
+  \newcommand\Etablissement[1]{\newcommand\@Etablissement{#1}}
+  \newcommand\EcoleDoctorale[1]{\newcommand\@EcoleDoctorale{#1}}
+  \newcommand\UniteRecherche[1]{\newcommand\@UniteRecherche{#1}}
+  \newcommand\Specialite[1]{\newcommand\@Specialite{#1}}
   \newcommand\Auteur[1]{\newcommand\@Auteur{#1}}
   \newcommand\Titre[1]{\newcommand\@Titre{#1}}
-  \newcommand\Faculte[1]{\newcommand\@Faculte{#1}}
-  \newcommand\Diplome[1]{\newcommand\@Diplome{#1}}
-  \newcommand\Date[2]{\newcommand\@Datea{#1}\newcommand\@Dateb{#2}}
+  \newcommand\Date[3]{\newcommand\@Datej{#1}\newcommand\@Datem{#2}\newcommand\@Datea{#3}}
 %  \newcommand\These{\newcommand\@Travail{TH\`ESE}\newcommand\@Presente{PR\'{E}SENT\'{E}E}}
   \newcommand\These{\newcommand\@Travail{Th\`ese}\newcommand\@Presente{pr\'esent\'ee}}
   \newcommand\Memoire{\newcommand\@Travail{M\'EMOIRE}\newcommand\@Presente{PR\'{E}SENT\'{E}}}
+  \newcommand\Memoire{\newcommand\@Travail{M\'EMOIRE}\newcommand\@Presente{PR\'{E}SENT\'{E}}}
 
-  \def\margepagetitre#1{\list{}{\leftmargin#1}\item[]}
-  %\def\margepagetitre#1#2{\list{}{\leftmargin#2\topmargin#1}\item[]}
+
+  \newcommand{\JuryA}[6]{\newcommand\@JuryAcv{#1}\newcommand\@JuryAprenom{#2}
+      \newcommand\@JuryAnom{#3}\newcommand\@JuryAgrade{#4}\newcommand\@JuryAetablissement{#5}\newcommand\@JuryAstatut{#6}}
+  \newcommand{\JuryB}[6]{\newcommand\@JuryBcv{#1}\newcommand\@JuryBprenom{#2}
+      \newcommand\@JuryBnom{#3}\newcommand\@JuryBgrade{#4}\newcommand\@JuryBetablissement{#5}\newcommand\@JuryBstatut{#6}}
+  \newcommand{\JuryC}[6]{\newcommand\@JuryCcv{#1}\newcommand\@JuryCprenom{#2}
+      \newcommand\@JuryCnom{#3}\newcommand\@JuryCgrade{#4}\newcommand\@JuryCetablissement{#5}\newcommand\@JuryCstatut{#6}}
+  \newcommand{\JuryD}[6]{\newcommand\@JuryDcv{#1}\newcommand\@JuryDprenom{#2}
+      \newcommand\@JuryDnom{#3}\newcommand\@JuryDgrade{#4}\newcommand\@JuryDetablissement{#5}\newcommand\@JuryDstatut{#6}}
+  \newcommand{\JuryE}[6]{\newcommand\@JuryEcv{#1}\newcommand\@JuryEprenom{#2}
+      \newcommand\@JuryEnom{#3}\newcommand\@JuryEgrade{#4}\newcommand\@JuryEetablissement{#5}\newcommand\@JuryEstatut{#6}}
+  \newcommand{\JuryF}[6]{\newcommand\@JuryFcv{#1}\newcommand\@JuryFprenom{#2}
+      \newcommand\@JuryFnom{#3}\newcommand\@JuryFgrade{#4}\newcommand\@JuryFetablissement{#5}\newcommand\@JuryFstatut{#6}}
+
+  \definecolor{titlepagecolor}{cmyk}{0,0,0,80}
+  \definecolor{titlepagecolor2}{RGB}{196,175,153}
+
+
+  %\def\margepagetitre#1{\list{}{\leftmargin#1}\item[]}
+  \def\margepagetitre#1#2{\list{}{\leftmargin#1\rightmargin#2}\item[]}
   \let\endquote=\endlist
 
   \newcommand\Pagetitre{
-    \thispagestyle{empty}
-    \begin{margepagetitre}{0in}
-      % \begin{margepagetitre}{5cm}{0cm}
+      \begin{margepagetitre}{3.75cm}{-1cm}
+	  %\setlength\textwidth{19cm}
+    
 
-      \null\vskip+1.0cm % PSL
+	\null\vskip+1.0cm % PSL
+
+      %En-tête
+	\begin{tikzpicture}[remember picture,overlay]
+	    %Banière
+	    \node [rectangle, 
+		    bottom color=titlepagecolor!40!white, 
+		    top color=white, 
+		    anchor=north west, 
+		    minimum width=6.0cm, 
+		minimum height=\paperheight-0.8cm] (box) at
+		([xshift=0.4cm, yshift=-0.4cm]current page.north west){};
+	%dashed line
+		\draw [dash pattern= on 0.6mm off 0.4mm] ([xshift=6.2cm, yshift=-0.4cm]current page.north
+      west) -- ([xshift=6.2cm, yshift=0.4cm]current page.south
+      west);
+
+% Logo établissement
+  \node [anchor=south west] (logo1) at ([xshift=1.2cm, yshift=1cm]current
+      page.south west){\includegraphics[width=4cm]{img/logo_um.pdf}};
+% Logo collège doctoral
+  \node [anchor=north west] (logo2) at ([xshift=1.2cm, yshift=-2cm]current page.north
+      west){\includegraphics[width=4cm]{img/logo_college_doctoral_LR.pdf}};
+% Logo grade
+  \node [anchor=north west, text width=\paperwidth, text height=4cm] (grade) at ([xshift=6.5cm, yshift=-2cm]current
+      page.north west){\includegraphics[width=12cm]{img/logo_grade_docteur.pdf}};
+
+      \end{tikzpicture}
+
       \begin{center}
-        % \hskip-1.6cm	\MakeUppercase{Universit\'{e} du Qu\'{e}bec \`{a} Rimouski}
-        % \textbf{\MakeUppercase{Universit\'{e} du Qu\'{e}bec \`{a} Rimouski}}\\
 
-        \includegraphics[width=8cm]{img/rimouski-noir.eps}
+  	\vskip0.1cm{D\'elivr\'ee par \MakeUppercase{\@Etablissement}} \\
+	\vskip1cm{Pr\'epar\'ee au sein de l'\'ecole doctorale \MakeUppercase{\@EcoleDoctorale}} \\
+	%\vskip0.1cm{Et de l'unit\'e de recherche \@UniteRecherche}
+	\vskip0.1cm{Et des unit\'es de recherche \@UniteRecherche}
+  	\vskip0.5cm{Specialit\'e: \@Specialite} \\
+  	\vskip2cm{Pr\'esent\'ee par \@Auteur} \\
 
+  	\vskip2cm\textbf{\MakeUppercase{\@Titre}}
 
-        \vfill\textbf{\@Titre}\\
-  	\vfill{\@Travail}
-  	{\@Presente} \\
-  	\vskip0.1cm{dans le cadre du \@Faculte} \\
-  	\vskip0.1cm{en vue de l'obtention du grade de \@Diplome}
-  	\vfill{PAR} \\
-  	\vskip0.1cm\textbf{\MakeUppercase{\textcopyright \@Auteur}}
-  	\vskip1.5cm\textbf{{\@Datea} {\@Dateb}}
-        \vskip1.5cm
-
+	\vskip1cm{Soutenue le {\@Datej} {\@Datem} {\@Datea}  devant le jury
+	compos\'e de}
+	\vskip1.5cm
       \end{center}
+
+      \vskip.01cm{\@JuryAcv\ \@JuryAprenom\ \@JuryAnom, \@JuryAgrade,
+	\@JuryAetablissement,\hfill \@JuryAstatut} \\
+	{\@JuryBcv\ \@JuryBprenom\ \@JuryBnom, \@JuryBgrade,
+	\@JuryBetablissement,\hfill \@JuryBstatut} \\
+	{\@JuryCcv\ \@JuryCprenom\ \@JuryCnom, \@JuryCgrade,
+	\@JuryCetablissement,\hfill \@JuryCstatut} \\
+	{\@JuryDcv\ \@JuryDprenom\ \@JuryDnom, \@JuryDgrade,
+	\@JuryDetablissement,\hfill \@JuryDstatut} \\
+	{\@JuryEcv\ \@JuryEprenom\ \@JuryEnom, \@JuryEgrade,
+	\@JuryEetablissement,\hfill \@JuryEstatut} \\
+	{\@JuryFcv\ \@JuryFprenom\ \@JuryFnom, \@JuryFgrade,
+	\@JuryFetablissement,\hfill \@JuryFstatut} \\
+
     \end{margepagetitre}
+
     \vskip.01cm\newpage
     \newpage\mbox{} % PSL, force a pagebreak in fake twopage.
   }
