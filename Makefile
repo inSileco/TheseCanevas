@@ -53,5 +53,7 @@ $(CHP1): $(CH1M)
 	pandoc $< -o chapitre1/main.tex $(PFLAGS)
 	cat chapitre1/head.tex chapitre1/main.tex > $@
 
+# Le "-" fait que l'erreur produite quand certains des fichiers à supprimer sont absents lors du "make clean" sera ignorée
+# https://www.gnu.org/software/make/manual/html_node/Errors.html
 clean:
-	rm intro.tex conclu.tex chapitre1/chap1.tex these.pdf *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log
+	-rm intro.tex conclu.tex chapitre1/chap1.tex these.pdf *.aux *.bbl *.blg *.brf *.idx *.out *.toc *.lot *.lof *.log
