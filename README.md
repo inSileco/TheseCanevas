@@ -6,8 +6,10 @@ de montrer comment, avec un template [Latex](http://www.latex-project.org) bien 
 J'ai créé ce répertoire après avoir formaté ma thèse dont
 la version, un peu différente, est disponible sur [ce répertoire](https://github.com/KevCaz/thesis).
 
+Noté aussi que Alain Danet a adopté ce répertoire pour répondre au exigence de
+l'université ([voir le répertoire](https://github.com/alaindanet/TheseCanevas)).
 
-For now, I've written all in French but I'd ne happy to answer questions in English. T
+For now, all is written in French but I'd be happy to answer questions in English as well.
 
 [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
