@@ -1,4 +1,4 @@
 pandoc
 pandoc-fignos
-pandoc-tablenos 
+pandoc-tablenos
 pandoc-eqnos
