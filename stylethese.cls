@@ -17,8 +17,8 @@
   %\RequirePackage{doublespace,cite,indentfirst,epsfig,ifthen}
   %\RequirePackage{doublespace,indentfirst,epsfig,ifthen,remreset,graphicx,dcolumn,amsmath,makeidx,multicol,natbib}
   \RequirePackage{setspace,remreset,graphicx,makeidx,ifthen}
-  \RequirePackage[english,frenchb]{babel} % frenchb default
-% \RequirePackage[frenchb,english]{babel} % english default
+  \RequirePackage[english,french]{babel} % french default
+% \RequirePackage[french,english]{babel} % english default
   \LoadClassWithOptions{book}
   \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
   \ProcessOptions\relax
@@ -143,12 +143,12 @@
 % \newcommand\@references{Bibliographie}
   \newcommand\@references{R\'ef\'erences}
   \renewcommand\partname{Partie}
-  \addto\captionsfrenchb{\renewcommand\chaptername{\@typedoc}}
-  \addto\captionsfrenchb{\renewcommand\tablename{Tableau}}
+  \addto\captionsfrench{\renewcommand\chaptername{\@typedoc}}
+  \addto\captionsfrench{\renewcommand\tablename{Tableau}}
   \addto\captionsenglish{\renewcommand\chaptername{\@typedoc}}
-  \addto\captionsfrenchb{\renewcommand\figurename{Figure}}
+  \addto\captionsfrench{\renewcommand\figurename{Figure}}
   \addto\captionsenglish{\renewcommand\bibname{R\'ef\'erences}}
-  \addto\captionsfrenchb{\renewcommand\bibname{R\'ef\'erences}}
+  \addto\captionsfrench{\renewcommand\bibname{R\'ef\'erences}}
 % \renewcommand\appendixname{Annexe} % When babel is not in use...
 % \renewcommand\indexname{Index}
 % \renewcommand\figurename{Figure}
