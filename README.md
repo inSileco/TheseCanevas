@@ -9,7 +9,7 @@ la version, un peu différente, est disponible sur [ce répertoire](https://gith
 Noté aussi que Alain Danet a adopté ce répertoire pour répondre au exigence de
 l'université ([voir le répertoire](https://github.com/alaindanet/TheseCanevas)).
 
-For now, all is written in French but I'd be happy to answer questions in English as well.
+For now, all is written in French but we'd be happy to answer questions in English as well.
 
 [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
@@ -37,7 +37,7 @@ pdflatex --version
 - [GNU make](https://www.gnu.org/software/make/manual/make.html)
 
 
-- [Pandoc](http://pandoc.org) pour convertir les fichier `.md` en fichier `.tex` (Pandoc fait bien plus que cela!), pour la dernière compilation j'ai utilisé la version 1.19.2.1,
+- [Pandoc](http://pandoc.org) (>=2.2.0) pour convertir les fichier `.md` en fichier `.tex` (Pandoc fait bien plus que cela!), pour la dernière compilation j'ai utilisé la version 1.19.2.1,
 - les filtres Pandoc suivants\ :
   - [Pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos) pour les équations,
   - [Pandoc-tablenos](https://github.com/tomduck/pandoc-tablenos) pour les tables,
@@ -90,8 +90,10 @@ apt-get update && apt-get upgrade
 Installer Latex:
 
 ```bash
-apt-get install texlive-base texlive-science texlive-extra-utils texlive-font-utils texlive-fonts-extra texlive-fonts-recommended
-sudo apt-get install texlive-latex-base texlive-latex-extra texlive-lang-english texlive-lang-french
+$ apt-get install texlive-base texlive-science texlive-extra-utils\
+  texlive-font-utils texlive-fonts-extra texlive-fonts-recommended\
+  texlive-latex-base texlive-latex-extra texlive-lang-english \
+  texlive-lang-french
 ```
 
 Installer Pandoc:

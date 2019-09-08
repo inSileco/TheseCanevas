@@ -18,7 +18,15 @@ CCTX = conclu.tex
 ##-- Ref
 REF = mybiblio.bib
 ##-- Les filtres que j'utilise et que je recommande (notamment pour la bibliographie)
-PFLAGS = --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-eqnos --natbib --bibliography=$(REF) --latex-engine=pdflatex
+##
+pd_mj = $(shell pandoc --version |  grep -o "[0-9]" | head -1)
+ifeq ($(pd_mj), 2)
+	pdfend=--pdf-engine
+else
+	pdfend=--latex-engine
+endif
+PFLAGS = --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-eqnos --natbib --bibliography=$(REF) $(pdfend)=pdflatex
+
 
 
 # $(THES) est la cible qui doit être produite par le fichier.
