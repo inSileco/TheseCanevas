@@ -1,5 +1,4 @@
 # A propos de ce répertoire
-[![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 [![Build Status](https://travis-ci.org/inSileco/TheseCanevas.svg?branch=master)](https://travis-ci.org/inSileco/TheseCanevas)
 
 :warning: :uk: Although the content of this repo is mainly in French, we'd be happy to answer questions in English as well :smiley:!
