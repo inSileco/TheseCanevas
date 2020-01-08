@@ -1,6 +1,14 @@
 sudo: required
 language: python
-dist: bionic
+
+jobs:
+  include:
+    - os: linux
+      dist: xenial
+      python: 3.6
+    - os: linux
+      dist: bionic
+      python: 3.6
 
 addons:
   apt:
